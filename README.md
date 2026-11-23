@@ -28,7 +28,7 @@ In Baballonia, configure the eye cameras with the following settings:
 
 ## Optional settings
 
-Optional settings can be applied using the camera address (e.g. `picam://left?highres=1&fps=60&exposure=110`).
+Optional settings can be applied using the camera address (e.g. `picam://left?highres=1&fps=30&exposure=110`).
 
 
 > :warning: Settings are applied to both eyes using the first eye camera that is started so both eyes should use the same settings.

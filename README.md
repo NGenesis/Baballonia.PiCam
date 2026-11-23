@@ -26,6 +26,7 @@ In Baballonia, configure the eye cameras with the following settings:
 
 Optional settings can be applied using the camera address (e.g. `picam://left?highres=1&fps=60&exposure=110`).
 
+
 > :warning: Settings are applied to both eyes using the first eye camera that is started so both eyes should use the same settings.
 
 | Setting | Value | Default | Description |
@@ -42,9 +43,10 @@ Optional settings can be applied using the camera address (e.g. `picam://left?hi
 Build the project using `Baballonia.PiCam.csproj`.
 Copy the files and folder output from `bin\` to your `<BaballoniaInstallPath>`. An archive of the files are output to `release\`.
 
+
 > :warning: If your `<BaballoniaInstallPath>` is not a Steam installation path, configure `BaballoniaInstallPath` manually as needed in `Baballonia.PiCam.csproj`.
 
 ## References
 
-[PiCamEmbedded](https://github.com/FynnleyNeko/PiCamEmbedded)
-[Baballonia](https://github.com/Project-Babble/Baballonia)
+- [PiCamEmbedded](https://github.com/FynnleyNeko/PiCamEmbedded)
+- [Baballonia](https://github.com/Project-Babble/Baballonia)

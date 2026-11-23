@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<RootNamespace>Baballonia.PiCam</RootNamespace>
+		<Platforms>x64</Platforms>
+		<SteamPath>$([MSBuild]::GetRegistryValue('HKEY_CURRENT_USER\Software\Valve\Steam', 'SteamPath'))</SteamPath>
+		<OutputPath>bin\Modules\</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendPlatformToOutputPath>false</AppendPlatformToOutputPath>
+		<DebugType>embedded</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+		<BaballoniaInstallPath>$(SteamPath)\steamapps\common\Baballonia</BaballoniaInstallPath>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.14" />
+		<PackageReference Include="OpenCvSharp4" Version="4.13.0.20260308" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<Reference Include="$(BaballoniaInstallPath)\Baballonia.SDK.dll">
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+	
+	<ItemGroup>
+		<None Remove="PiCamEmbedded\**\*" />
+		<None Remove="release\**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PiCamEmbeddedFiles Include="PiCamEmbedded\**\*" Exclude="PiCamEmbedded\LICENSE" />
+	</ItemGroup>
+
+	<Target Name="CopyPiCamEmbedded" AfterTargets="Build">
+		<Copy SourceFiles="@(PiCamEmbeddedFiles)" DestinationFiles="@(PiCamEmbeddedFiles->'$(OutputPath)..\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+	</Target>
+	
+	<Target Name="ZipOutputPath" AfterTargets="CopyPiCamEmbedded">
+		<MakeDir Directories="$(MSBuildProjectDirectory)\release" />
+		<ZipDirectory SourceDirectory="$(OutputPath).." DestinationFile="$(MSBuildProjectDirectory)\release\$(MSBuildProjectName).zip" Overwrite="true" />
+	</Target>
+</Project>

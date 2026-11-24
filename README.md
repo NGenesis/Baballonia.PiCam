@@ -6,7 +6,7 @@ Baballonia capture module for the Droolon Pi1 eye tracker using [PiCamEmbedded](
 
 ## Installation
 
-[Download](https://github.com/NGenesis/Baballonia.PiCam/releases/download/v1.0/Baballonia.PiCam.zip)
+:inbox_tray: [Download](https://github.com/NGenesis/Baballonia.PiCam/releases/download/v1.0/Baballonia.PiCam.zip)
 
 Download the [latest release](https://github.com/NGenesis/Baballonia.PiCam/releases/latest) and extract the archive into your `<BaballoniaInstallPath>` (e.g. `C:\Program Files\Steam\steamapps\common\Baballonia` for Steam installations)
 

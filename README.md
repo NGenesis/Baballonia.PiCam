@@ -26,6 +26,10 @@ In Baballonia, configure the eye cameras with the following settings:
 | Left | `picam://left` | `Droolon Pi1 (PiCam)` |
 | Right | `picam://right` | `Droolon Pi1 (PiCam)` |
 
+Click `Start Camera` for each eye camera.
+
+> ℹ️ It can take up to 10 seconds for the eye tracker to start.
+
 ## Optional settings
 
 Optional settings can be applied using the camera address (e.g. `picam://left?highres=1&fps=30&exposure=110`).

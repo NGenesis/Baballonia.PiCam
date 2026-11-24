@@ -8,7 +8,7 @@ Baballonia capture module for the Droolon Pi1 eye tracker using [PiCamEmbedded](
 
 :inbox_tray: [Download](https://github.com/NGenesis/Baballonia.PiCam/releases/download/v1.0/Baballonia.PiCam.zip)
 
-Download the [latest release](https://github.com/NGenesis/Baballonia.PiCam/releases/latest) and extract the archive into your `<BaballoniaInstallPath>` (e.g. `C:\Program Files\Steam\steamapps\common\Baballonia` for Steam installations)
+1. Download the [latest release](https://github.com/NGenesis/Baballonia.PiCam/releases/latest) and extract the archive into your `<BaballoniaInstallPath>` (e.g. `C:\Program Files\Steam\steamapps\common\Baballonia` for Steam installations)
 
 The folder structure should look like:
 ```
@@ -19,14 +19,14 @@ The folder structure should look like:
 	Modules\
 		Baballonia.PiCam.dll
 ```
-In Baballonia, configure the eye cameras with the following settings:
+2. In Baballonia, configure the eye cameras with the following settings:
 
 | Eye | Address | Preferred Backend |
 |---|---|---|
 | Left | `picam://left` | `Droolon Pi1 (PiCam)` |
 | Right | `picam://right` | `Droolon Pi1 (PiCam)` |
 
-Click `Start Camera` for each eye camera.
+3. Click `Start Camera` for each eye camera.
 
 > ℹ️ It can take up to 10 seconds for the eye tracker to start.
 
